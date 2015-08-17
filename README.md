@@ -1,4 +1,4 @@
-# impex-syntax theme
+# Language Impex v0.0.2
 
 A short description of your theme.
 
