@@ -1,0 +1,10 @@
+{
+  "name": "language-impex",
+  "theme": "syntax",
+  "description": "Syntax highlighting for Impex",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  }
+
+}

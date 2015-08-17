@@ -1,0 +1,51 @@
+'scopeName': 'source.impex'
+'name': 'Impex'
+'fileTypes': ['impex']
+'patterns': [
+  {
+    'include': '#comment'
+  }
+  {
+    'match': '\\b(?i:(0x\\h*))'
+    'name': 'constant.numeric.integer.hexadecimal.python'
+  }
+  {
+    'match': '(true|false)'
+    'name': 'constant.language.boolean.impex'
+  }
+  {
+    'match': '(;|,|"|=)'
+    'name': 'constant.language.mypunctuation.impex'
+  }
+  {
+    'match': 'INSERT_UPDATE'
+    'name': 'constant.language.command.impex'
+  }
+  {
+    'match': '([0-9A-Za-zğüşöçİĞÜŞÖÇ_&]+)'
+    'name': 'constant.language.text.impex'
+  }
+  {
+    'match': '((\\$).[0-9A-Za-zğüşöçİĞÜŞÖÇ_&,]+)'
+    'name': 'constant.language.macro.impex'
+  }
+  {
+    'match': '\\((.*?)\\)'
+    'name': 'constant.language.curly.brackets.impex'
+  }
+  {
+    'match': '\\[(.*?)\\]'
+    'name': 'constant.language.square.brackets.impex'
+  }
+
+]
+'repository':
+  'comment':
+    'captures':
+      '1':
+        'name': 'comment.line.number-sign.generic-config'
+      '2':
+        'name': 'punctuation.definition.comment.generic-config'
+      '3':
+        'name': 'punctuation.definition.comment.generic-config'
+    'match': '((#).*$\\n?)'
