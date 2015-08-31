@@ -3,6 +3,7 @@
 'fileTypes': ['impex']
 'patterns': [
   {
+<<<<<<< HEAD
     #Comment definition
     'include': '#comment'
   }
@@ -61,6 +62,43 @@
     'match': '(?<=\\[).*?(?=\\=)'
     'name': 'import.argument'
   }
+=======
+    'include': '#comment'
+  }
+  {
+    'match': '\\b(?i:(0x\\h*))'
+    'name': 'constant.numeric.integer.hexadecimal.python'
+  }
+  {
+    'match': '(true|false)'
+    'name': 'constant.language.boolean.impex'
+  }
+  {
+    'match': '(;|,|"|=)'
+    'name': 'constant.language.mypunctuation.impex'
+  }
+  {
+    'match': 'INSERT_UPDATE'
+    'name': 'constant.language.command.impex'
+  }
+  {
+    'match': '([0-9A-Za-zğüşöçİĞÜŞÖÇ_&]+)'
+    'name': 'constant.language.text.impex'
+  }
+  {
+    'match': '((\\$).[0-9A-Za-zğüşöçİĞÜŞÖÇ_&,]+)'
+    'name': 'constant.language.macro.impex'
+  }
+  {
+    'match': '\\((.*?)\\)'
+    'name': 'constant.language.curly.brackets.impex'
+  }
+  {
+    'match': '\\[(.*?)\\]'
+    'name': 'constant.language.square.brackets.impex'
+  }
+
+>>>>>>> origin/master
 ]
 'repository':
   'comment':
