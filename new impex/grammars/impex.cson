@@ -1,0 +1,74 @@
+'scopeName': 'source.impex'
+'name': 'Impex'
+'fileTypes': ['impex']
+'patterns': [
+  {
+    #Comment definition
+    'include': '#comment'
+  }
+  {
+    #Boolean definitions
+    'match': '(true|false)'
+    'name': 'boolean.impex'
+  }
+  {
+    #Punctuation definitions
+    'match': '(;|,|"|=|\\(|\\)|\\[|\\]|\\:)'
+    'name': 'punctuation.impex'
+  }
+  {
+    #Command definitions
+    'match': 'INSERT_UPDATE|UPDATE'
+    'name': 'command.impex'
+  }
+  {
+    #Definition of macro starts with $
+    'match': '((\\$).[0-9A-Za-zğüşöçİĞÜŞÖÇ_=&]+)'
+    'name': 'macro.impex'
+  }
+  {
+    #Definition after ( Definition method
+    'match': '(?<=\\()[^\\)|^\\=|^\\(|^\\[|^\\]|^\\{|^\\}|^\\$]+'
+    'name': 'curly-brackets-inside.impex'
+  }
+  {
+    #Definition after =
+    'match': '(?<=\\=)[^\\)|^\\=|^\\(|^\\[|^\\]|^\\{|^\\}|^\\$]+'
+    'name': 'square-brackets-inside.impex'
+  }
+  {
+    #Definition after :
+    'match': '(?<=\\:)[^\\)|^\\=|^\\(|^\\[|^\\]|^\\{|^\\}|^\\$]+'
+    'name': 'square-brackets-inside.impex'
+  }
+  {
+    #Definition @
+    'match': '(\\@)'
+    'name': 'import.impex'
+  }
+  {
+    #Definition after @
+    'match': '(?<=\\@)[^\\)|^\\=|^\\(|^\\[|^\\]|^\\{|^\\}|^\\$]+'
+    'name': 'import.impex'
+  }
+  {
+    #Method after , and before [
+    'match': '(?<=\\,).*?(?=\\[)'
+    'name': 'curly-brackets-inside.impex'
+  }
+  {
+    #Argument after [ and before =
+    'match': '(?<=\\[).*?(?=\\=)'
+    'name': 'import.argument'
+  }
+]
+'repository':
+  'comment':
+    'captures':
+      '1':
+        'name': 'comment.line.number-sign.generic-config'
+      '2':
+        'name': 'punctuation.definition.comment.generic-config'
+      '3':
+        'name': 'punctuation.definition.comment.generic-config'
+    'match': '((#).*$\\n?)'
